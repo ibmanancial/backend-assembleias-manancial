@@ -66,5 +66,18 @@ export default {
         }
 
         next();
+    },
+
+    async checkActivitiesManancial(req, res, next) {
+        const {
+            name, description, local, activity_date
+        } = req.body.activities;
+
+        if (!name || !description ||
+            !local || !activity_date) {
+            return res.status(400).json({message: "Preencha todos os campos"});
+        }
+        
+        next();
     }
 }

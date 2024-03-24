@@ -32,6 +32,14 @@ model ManancialMembersQualification {
   qualificacao     ManancialMembers @relation(fields: [member_id], references: [member_id])
 }
 
+model ManancialActivities {
+  activity_id      Int              @id @default(autoincrement())
+  name             String
+  description      String
+  local            String
+  activity_date    DateTime
+}
+
 model LogsAplicacoes {
   id_log         Int      @id @default(autoincrement())
   id_correlation String
